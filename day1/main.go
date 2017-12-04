@@ -13,7 +13,8 @@ func main(){
     fmt.Println("Hello")
     fmt.Println("Enter code:")
     scanner.Scan()
-    ans := captcha.Code(scanner.Text())
-    fmt.Printf("Answer is: %d", ans)
+    ans := scanner.Text()
+    fmt.Printf("Answer one is: %d.\n", captcha.CodeOne(ans))
+    fmt.Printf("Answer two is: %d.\n", captcha.CodeTwo(ans))
 }
 

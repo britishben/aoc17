@@ -8,7 +8,7 @@ func IsEqual(a int,b int) (bool){
     return a==b
 }
 
-func Code(s string) (value int){
+func CodeOne(s string) (value int){
     a := Digits(s)
     c := 0 //what to compare to v
 
@@ -18,6 +18,27 @@ func Code(s string) (value int){
             c=a[0]
         }else{
             c=a[i+1]
+        }
+
+        if IsEqual(v, c) {
+            value += v
+        }
+    }
+    return value
+}
+
+func CodeTwo(s string) (value int){
+    a := Digits(s)
+    c := 0 //what to compare to v
+
+    demi := len(a)/2
+
+    for i, v := range a{
+
+        if i >= demi {
+            c=a[i-demi]
+        }else{
+            c=a[i+demi]
         }
 
         if IsEqual(v, c) {
