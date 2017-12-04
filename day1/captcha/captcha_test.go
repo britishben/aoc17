@@ -1,7 +1,8 @@
-package day1
+package captcha
 
 import(
     "testing"
+    "strconv"
 )
 
 var ints = [][2]int{{1122,3},{1111,4},{1234,0},{91212129,9}}
@@ -19,7 +20,7 @@ func TestIsEqual(t *testing.T) {
 }
 
 func TestDigits(t *testing.T) {
-    for _,m := range Digits(111111111){
+    for _,m := range Digits("111111111"){
         if  m != 1 {
             t.Errorf("Cannot split int into digits")
        }
@@ -28,7 +29,7 @@ func TestDigits(t *testing.T) {
 
 func TestCode(t *testing.T) {
     for _,n := range ints{
-       if m := Code(n[0]); m != n[1] {
+       if m := Code(strconv.Itoa(n[0])); m != n[1] {
             t.Errorf("Expected %s to return %d", n[0], n[1])
         }
     }
