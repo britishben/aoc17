@@ -1,7 +1,7 @@
 package main
 
 import (
-	"aoc17/day2/checksum"
+	checksum "aoc17/day2/checksum"
 	"bufio"
 	"fmt"
 	"os"
@@ -24,6 +24,6 @@ func main() {
 	//fmt.Println("Enter code:")
 	scanner.Scan()
 	ans := scanner.Text()
-	fmt.Printf("Answer one is: %d.\n", captcha.CodeOne(ans))
-	fmt.Printf("Answer two is: %d.\n", captcha.CodeTwo(ans))
+	fmt.Printf("Answer one is: %d.\n", checksum.CodeOne(ans))
+	//	fmt.Printf("Answer two is: %d.\n", checksum.CodeTwo(ans))
 }
